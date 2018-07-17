@@ -60,6 +60,7 @@
     "doctrine/doctrine-bundle": "~1.6.8",
     "doctrine/doctrine-migrations-bundle": "~1.2.1",
     "doctrine/instantiator": "~1.0.5",
+    "dpfaffenbauer/workflow-gui": "^2.0",
     "egulias/email-validator": "*",
     "endroid/qr-code": "~2.2",
     "geoip2/geoip2": "~2",

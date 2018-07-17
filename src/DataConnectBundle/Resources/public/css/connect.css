@@ -1,0 +1,71 @@
+.plugin_dataconnector {
+    background: url("/pimcore/static6/img/flat-color-icons/link.svg") no-repeat center center !important;
+}
+
+.plugin_data_mapping_list {
+    background: url("/pimcore/static6/img/flat-color-icons/list.svg") no-repeat center center !important;
+}
+
+.data_connector_icon {
+    background: url(/pimcore/static6/img/icon/connect.png) left center no-repeat !important;
+}
+
+#pimcore_menu_dataconnector {
+    background-image: url(/pimcore/static6/img/flat-color-icons/rectangle.svg) !important;
+}
+
+
+
+.plugin_data_connect_icon_view {
+    background: url(/bundles/dataconnect/img/application.png) center center no-repeat !important;
+}
+
+.plugin_data_connect_question_icon {
+    background: url(/bundles/dataconnect/img/icons/question.svg) center center no-repeat !important;
+}
+
+
+.plugin_data_connect_icon_delete {
+    background: url(/pimcore/static6/img/flat-color-icons/delete.svg) center center no-repeat !important;
+}
+
+.x-action-col-icon {
+    /* height: 16px;
+    width: 16px; */
+    margin-right: 8px;
+}
+
+.plugin_data_connect_icon_edit {
+    background: url(/pimcore/static6/img/flat-color-icons/edit.svg) center center no-repeat !important;
+}
+.plugin_data_connect_icon_test {
+    background: url(/bundles/dataconnect/img/database_connect.png) center center no-repeat !important;
+}
+.plugin_data_connect_icon_execute {
+    background: url(/bundles/dataconnect/img/lightning.png) center center no-repeat !important;
+}
+.plugin_data_connect_question_icon{
+    position: relative;
+    display: inline-block;
+    float: right;
+    margin-right: -460px;
+    border-radius: 10px;
+}
+
+.plugin_data_connect_question_icon .panel-tabs{
+    /*visibility: hidden;*/
+    width: 120px;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    padding: 5px 0;
+    border-radius: 6px;
+
+    /* Position the tooltip text - see examples below! */
+    position: absolute;
+    z-index: 1;
+}
+
+.plugin_data_connect_question_icon:hover .panel-tabs{
+    visibility: visible;
+}

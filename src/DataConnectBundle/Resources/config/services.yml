@@ -1,0 +1,5 @@
+services:
+    home_page_event:
+        class: DataConnectBundle\EventSubscriber\LogEventSubscriber
+        tags:
+            - { name: kernel.event_listener, event: log_event,  method: logEvent  }

@@ -1,6 +1,6 @@
 <?php 
 
 return [
-    "active" => TRUE,
+    "active" => FALSE,
     "ip" => ""
 ];

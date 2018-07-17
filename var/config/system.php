@@ -3,8 +3,24 @@
 return [
     "general" => [
         "timezone" => "Europe/Berlin",
+        "path_variable" => "",
+        "domain" => "",
+        "redirect_to_maindomain" => FALSE,
         "language" => "en",
-        "validLanguages" => "en"
+        "validLanguages" => "en,en_US,en_GB,es",
+        "fallbackLanguages" => [
+            "en" => "",
+            "en_US" => "",
+            "en_GB" => "",
+            "es" => ""
+        ],
+        "defaultLanguage" => "",
+        "loginscreencustomimage" => "",
+        "disableusagestatistics" => FALSE,
+        "debug_admin_translations" => FALSE,
+        "devmode" => FALSE,
+        "instanceIdentifier" => "",
+        "show_cookie_notice" => FALSE
     ],
     "database" => [
         "params" => [
@@ -12,40 +28,59 @@ return [
             "password" => "root",
             "dbname" => "birchbox_base_dump",
             "host" => "localhost",
-            "port" => "3306"
+            "port" => "3060"
         ]
     ],
     "documents" => [
         "versions" => [
-            "steps" => "10"
+            "days" => NULL,
+            "steps" => 10
         ],
         "default_controller" => "default",
         "default_action" => "default",
         "error_pages" => [
             "default" => "/"
         ],
-        "createredirectwhenmoved" => "",
+        "createredirectwhenmoved" => FALSE,
         "allowtrailingslash" => "no",
-        "generatepreview" => "1"
+        "generatepreview" => TRUE
     ],
     "objects" => [
         "versions" => [
-            "steps" => "10"
+            "days" => NULL,
+            "steps" => 10
         ]
     ],
     "assets" => [
         "versions" => [
-            "steps" => "10"
-        ]
+            "days" => NULL,
+            "steps" => 10
+        ],
+        "icc_rgb_profile" => "",
+        "icc_cmyk_profile" => "",
+        "hide_edit_image" => FALSE,
+        "disable_tree_preview" => FALSE
     ],
     "services" => [
-
+        "google" => [
+            "client_id" => "",
+            "email" => "",
+            "simpleapikey" => "",
+            "browserapikey" => ""
+        ]
     ],
     "cache" => [
+        "enabled" => FALSE,
+        "lifetime" => NULL,
+        "excludePatterns" => "",
         "excludeCookie" => ""
     ],
     "httpclient" => [
-        "adapter" => "Socket"
+        "adapter" => "Socket",
+        "proxy_host" => "",
+        "proxy_port" => "",
+        "proxy_user" => "",
+        "proxy_pass" => ""
     ],
     "email" => [
         "sender" => [
@@ -56,7 +91,7 @@ return [
             "name" => "",
             "email" => ""
         ],
-        "method" => "mail",
+        "method" => "smtp",
         "smtp" => [
             "host" => "",
             "port" => "",
@@ -65,7 +100,7 @@ return [
             "auth" => [
                 "method" => NULL,
                 "username" => "",
-                "password" => ""
+                "password" => NULL
             ]
         ],
         "debug" => [
@@ -90,9 +125,26 @@ return [
             "auth" => [
                 "method" => NULL,
                 "username" => "",
-                "password" => ""
+                "password" => NULL
             ]
         ],
-        "usespecific" => ""
+        "debug" => NULL,
+        "usespecific" => FALSE
+    ],
+    "branding" => [
+        "color_login_screen" => "",
+        "color_admin_interface" => ""
+    ],
+    "webservice" => [
+        "enabled" => FALSE
+    ],
+    "applicationlog" => [
+        "mail_notification" => [
+            "send_log_summary" => FALSE,
+            "filter_priority" => NULL,
+            "mail_receiver" => ""
+        ],
+        "archive_treshold" => "30",
+        "archive_alternative_database" => ""
     ]
 ];

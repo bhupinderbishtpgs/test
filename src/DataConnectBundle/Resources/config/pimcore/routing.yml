@@ -1,0 +1,5 @@
+data_connect:
+    resource: "@DataConnectBundle/Controller/"
+    type:     annotation
+    prefix:   /DataConnect
+

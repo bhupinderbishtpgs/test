@@ -10,7 +10,7 @@ services:
         public: false
 
     #
-    # CONTROLLERS
+    # CONTROLLERS 
     #
 
     # auto-register all controllers as services
@@ -18,3 +18,9 @@ services:
         resource: '../../Controller'
         public: true
         tags: ['controller.service_arguments']
+
+    AppBundle\EventListener\ObjectbrickAutoLoadListener:
+        tags:       
+            - { name: kernel.event_listener, event: pimcore.dataobject.postAdd, method: attachBrick }
+            - { name: kernel.event_listener, event: pimcore.dataobject.preUpdate, method: checkSubclassMap }
+    

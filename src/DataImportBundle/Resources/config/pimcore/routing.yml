@@ -1,0 +1,5 @@
+data_import:
+    resource: "@DataImportBundle/Controller/"
+    type:     annotation
+    prefix:   /
+

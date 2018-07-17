@@ -1,0 +1,25 @@
+services:
+    _defaults:
+        autowire: true
+        autoconfigure: true
+        public: true
+
+    DataImportBundle\Controller\:
+        resource: '../../Controller'
+        public: true
+        tags: ['controller.service_arguments']
+    
+    DataImportBundle\Model\Job: 
+        arguments: ['@Pimcore\Log\ApplicationLogger']
+    
+    DataImportBundle\Model\Mapping\Column: ~
+    
+    DataImportBundle\Model\Mapping:
+        arguments: ['@Symfony\Component\DependencyInjection\ContainerInterface', '@DataImportBundle\Model\Mapping\Column', '@Pimcore\Log\ApplicationLogger']
+    
+    DataImportBundle\EventListener\AssetListener:
+        public: true
+        arguments: ['@Pimcore\Log\ApplicationLogger', '@DataImportBundle\Model\Job', '@DataImportBundle\Model\Mapping']
+        tags:
+            - { name: kernel.event_listener, event: pimcore.asset.postAdd, method: onPostAdd }
+            - { name: kernel.event_listener, event: pimcore.asset.postDelete, method: onPostDelete }

@@ -1,0 +1,4 @@
+parameters:
+    vendorProperty     : vendor
+    csvTypeProperty    : file-type
+    categoryProperty   : category

@@ -185,27 +185,26 @@ class Service
     private static function getNotificationUsers($userIds)
     {
         $notifyUsers = [];
-
         //get roles
         $roleList = new User\Role\Listing();
-        $roleList->setCondition('id in (?)', [implode(',', $userIds)]);
-
+        $roleList->setCondition('id in ('.implode(',', $userIds).')');
+       // $roleList->setCondition('id in (?)', [implode(',', $userIds)]);
+       // print_r($roleList->load());
         foreach ($roleList->load() as $role) {
             $userList = new User\Listing();
             $userList->setCondition('FIND_IN_SET(?, roles) > 0', [$role->getId()]);
-
             foreach ($userList->load() as $user) {
                 if ($user->getEmail()) {
                     $notifyUsers[] = $user;
                 }
             }
         }
+      //  print_r($notifyUsers); die();   
         unset($roleList, $user, $role);
-
         //get users
         $roleList = new User\Listing();
-        $roleList->setCondition('id in (?)', [implode(',', $userIds)]);
-
+        $roleList->setCondition('id in ('.implode(',', $userIds).')');
+        //$roleList->setCondition('id in (?)', [implode(',', $userIds)]);
         foreach ($roleList->load() as $user) {
             /**
              * @var User $user
@@ -214,7 +213,7 @@ class Service
                 $notifyUsers[] = $user;
             }
         }
-
         return $notifyUsers;
     }
+    
 }

@@ -1,0 +1,5 @@
+workflow:
+    resource: "@WorkflowBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
